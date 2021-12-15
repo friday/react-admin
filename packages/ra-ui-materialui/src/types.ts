@@ -2,9 +2,6 @@ import { ReactElement, ReactNode, ElementType } from 'react';
 import { SxProps } from '@mui/system';
 import {
     Identifier,
-    Exporter,
-    SortPayload,
-    FilterPayload,
     Record as RaRecord,
     MutationMode,
     OnSuccess,
@@ -13,26 +10,6 @@ import {
     UpdateParams,
 } from 'ra-core';
 import { UseQueryOptions, UseMutationOptions } from 'react-query';
-
-export interface ListProps {
-    actions?: ReactElement | false;
-    aside?: ReactElement;
-    bulkActionButtons?: ReactElement | false;
-    classes?: any;
-    className?: string;
-    component?: ElementType;
-    empty?: ReactElement | false;
-    exporter?: Exporter | false;
-    filter?: FilterPayload;
-    filterDefaultValues?: object;
-    filters?: ReactElement | ReactElement[];
-    pagination?: ReactElement | false;
-    perPage?: number;
-    resource?: string;
-    sort?: SortPayload;
-    disableSyncWithLocation?: boolean;
-    title?: string | ReactElement;
-}
 
 export interface EditProps<RecordType extends RaRecord = RaRecord> {
     actions?: ReactElement | false;
@@ -69,6 +46,7 @@ export interface CreateProps<RecordType extends RaRecord = RaRecord> {
 
 export interface ShowProps<RecordType extends RaRecord = RaRecord> {
     actions?: ReactElement | false;
+    aside?: ReactElement;
     children: ReactNode;
     className?: string;
     component?: ElementType;

@@ -694,7 +694,7 @@ The dataProvider hooks (`useGetOne`, etc) return the request state. The `loading
 ```diff
 const BookDetail = ({ id }) => {
 -   const { data, error, loaded } = useGetOne('books', id);
-+   const { data, error, isLoading } = useGetOne('books', id);
++   const { data, error, isLoading } = useGetOne('books', { id });
 -   if (!loaded) {
 +   if (isLoading) {
         return <Loading />;
@@ -727,7 +727,7 @@ If you were using components dependent on the dataProvider hooks in isolation (e
 
 // this component relies on dataProvider hooks
 const BookDetail = ({ id }) => {
-    const { data, error, isLoading } = useGetOne('books', id);
+    const { data, error, isLoading } = useGetOne('books', { id });
     if (isLoading) {
         return <Loading />;
     }
@@ -755,15 +755,13 @@ test('MyComponent', () => {
 });
 ```
 
-## AutocompleteInput Now Uses Material UI Autocomplete
+## AutocompleteInput and AutocompleteArrayInput Now Uses Material UI Autocomplete
 
-## AutocompleteArrayInput Now Uses Material UI Autocomplete
-
-We migrated the `AutocompleteArrayInput` so that it leverage Material UI [`<Autocomplete>`](https://mui.com/components/autocomplete/). If you relied on [Downshift](https://www.downshift-js.com/) options, you'll have to update your component.
+We migrated both the `AutocompleteInput` and `AutocompleteArrayInput` components so that they leverage Material UI [`<Autocomplete>`](https://mui.com/components/autocomplete/). If you relied on [Downshift](https://www.downshift-js.com/) options, you'll have to update your component.
 
 Besides, some props supported by the previous implementation aren't anymore:
 - `allowDuplicates`: This is not supported by MUI Autocomplete.
-- `clearAlwaysVisible`: the clear button is now always visible, either while hovering the input or when it has focus. You can hide it using the `<Autocomplete>` `disableClearable` prop though.
+- `clearAlwaysVisible`: the clear button is now always visible, either while hovering the input or when it has focus. You can hide it using the `disableClearable` prop though.
 - `resettable`: Removed for the same reason as `clearAlwaysVisible`
 
 ## `useAuthenticated` Signature has Changed
