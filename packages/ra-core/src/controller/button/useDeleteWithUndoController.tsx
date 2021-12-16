@@ -1,8 +1,7 @@
 import { useCallback, ReactEventHandler } from 'react';
-import { useDelete } from '../../dataProvider';
+import { useDelete, useRefresh } from '../../dataProvider';
 import { CRUD_DELETE } from '../../actions';
 import {
-    useRefresh,
     useNotify,
     useRedirect,
     RedirectionSideEffect,

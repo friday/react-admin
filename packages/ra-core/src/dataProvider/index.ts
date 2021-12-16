@@ -15,10 +15,10 @@ import useUpdateMany from './useUpdateMany';
 import useCreate from './useCreate';
 import useDelete from './useDelete';
 import useDeleteMany from './useDeleteMany';
-import useRefreshWhenVisible from './useRefreshWhenVisible';
-import useIsAutomaticRefreshEnabled from './useIsAutomaticRefreshEnabled';
 
 export * from './testDataProvider';
+export * from './useLoading';
+export * from './useRefresh';
 export * from './useGetOne';
 export * from './useGetList';
 export * from './useQueryWithStore';
@@ -45,7 +45,5 @@ export {
     useCreate,
     useDelete,
     useDeleteMany,
-    useRefreshWhenVisible,
     withDataProvider,
-    useIsAutomaticRefreshEnabled,
 };

@@ -3,7 +3,6 @@ import resources, {
     getResources as resourceGetResources,
     getReferenceResource as resourceGetReferenceResource,
 } from './resource';
-import loading from './loading';
 import notifications from './notifications';
 import references, {
     getPossibleReferenceValues as referencesGetPossibleReferenceValues,
@@ -23,7 +22,6 @@ export default combineReducers({
      */
     resources: resources || defaultReducer,
     customQueries: customQueries || defaultReducer,
-    loading: loading || defaultReducer,
     notifications: notifications || defaultReducer,
     references: references || defaultReducer,
     ui: ui || defaultReducer,
